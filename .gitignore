@@ -3,3 +3,5 @@ node_modules
 accounts
 ._*
 manifest.json
+*.ai
+!*example.ai
