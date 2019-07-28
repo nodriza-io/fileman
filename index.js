@@ -48,6 +48,8 @@ const uploadEndpoint = 'https://' + domain + '.nodriza.io/v1/fileData/upload'
 action === 'upload' ? upload() : download()
 
 function upload () {
+	const root = 'accounts/' + domain
+	if (!fs.existsSync(root)) fs.mkdirSync(root)
 	watch()
 }
 
@@ -75,7 +77,6 @@ function uploadRecursive (files, callback) {
 	let count = 0
 	async.timesLimit(files.length, 1, (i, callback) => {
 		let key = files[i].slice(9)
-		// if (key.indexOf('.DS_Store') !== -1) return callback()
 		let remoteKey = renameKey(key)
 		count++
 		console.log(`> Sync ${count} of ${files.length} - ${((count * 100) / files.length).toFixed(2)}%\n       from ${key} \n       to https://s3.amazonaws.com/files.nodriza.io/${remoteKey}`)
@@ -345,7 +346,7 @@ function downloadRecursive (fileList, callback) {
 
 function watch () {
 
-	console.log('> Loading...'.green)
+	console.log('> Watching for changes...'.blue)
 
 	setInterval(() => {
 		if (!_.isEmpty(queue)) {
