@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nodriza-io/fileman#readme",
   "dependencies": {
     "async": "^2.6.2",
+    "chokidar": "^3.0.2",
     "colors": "^1.3.3",
     "commander": "^2.20.0",
     "exceljs": "^1.9.0",
@@ -30,6 +31,7 @@
     "numeral": "^2.0.6",
     "ordinal": "^1.0.2",
     "prompt": "^1.0.0",
+    "recursive-readdir": "^2.2.2",
     "request": "^2.88.0",
     "request-progress": "^3.0.0"
   }
