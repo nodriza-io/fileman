@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/nodriza-io/fileman#readme",
   "dependencies": {
-    "async": "^2.6.2",
+    "async": "^2.6.4",
     "chokidar": "^3.0.2",
     "colors": "^1.3.3",
     "commander": "^2.20.0",
